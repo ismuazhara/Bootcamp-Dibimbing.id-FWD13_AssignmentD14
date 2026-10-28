@@ -1,0 +1,34 @@
+START
+INPUT harga, jumlah, member
+IF harga bukan angka finite
+    OR harga bukan bilangan bulat
+    OR harga <= 0
+    OR jumlah bukan bilangan bulat
+    OR jumlah <= 0
+    OR member bukan boolean THEN
+OUTPUT = "Input tidak valid"
+ENDIF
+
+//Hitung biaya//
+Subtotal = Harga x jumlah
+
+IF member = TRUE THEN
+    diskon = Subtotal * 0,10
+ELSE
+    diskon <= 0
+ENDIF
+
+Biaya setelah diskon = Subtotal - diskon
+//Hitung Ongkir//
+IF Biaya setelah diskon >= 250000
+    Ongkir = 0
+ELSE
+    Ongkir = 15000
+ENDIF
+
+Total bayar = Subtotal - diskon + Ongkir
+OUTPUT Subtotal, diskon, Ongkir
+END
+
+
+
